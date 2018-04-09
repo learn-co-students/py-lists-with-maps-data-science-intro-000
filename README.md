@@ -1,19 +1,9 @@
 
-# Lists Lab
+# Lists and Maps Lab
 
 ### Introduction
 
-Ok, so now that we have gotten a sense of how to read from a list and alter a list in Python, let's put this knowledge to practice. 
-
-### Objectives
-
-* Practice reading one and multiple elements from lists
-* Practice altering data in lists
-* Practice add elements and removing elements from lists
-
-### Our initial data structure 
-
-In the previous lesson, we had a list of top travel cities.
+Ok, so now that we have gotten a sense of how to read from a list and alter a list in Python, let's put see how our knowledge of lists can fit into data visualizations by plotting maps. 
 
 ### Working with lists and maps
 
