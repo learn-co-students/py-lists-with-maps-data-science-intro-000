@@ -1,7 +1,10 @@
 
 # Lists and Maps Lab
 
+
 ### Introduction
+
+Hello
 
 Ok, so now that we have a sense of how to read from a list and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps. 
 
