@@ -1,10 +1,9 @@
 
 # Lists and Maps Lab
 
-
 ### Introduction
 
-Ok, so now that we have a sense of how to read from a list and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps. 
+Ok, so now that we have a sense of how to read from a list and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps.
 
 ### Working with lists and maps
 
@@ -17,28 +16,28 @@ neighborhoods = ['Palermo', 'Ricoleta', 'Santelmo', 'Puerto Madero', 'Belgrano',
 
 > Press shift + enter on this cell and all following code cells.
 
-Select the first element of the list, and assign it to the variable `palermo`.
+Assign the variable `palermo` to the first element of the `neighborhoods` list.
 
 
 ```python
 palermo = None
 ```
 
-Select the last element of the list, and assign it to the variable la_boca.
+Now assign the variable `la_boca` to the last element of our list.
 
 
 ```python
 la_boca = None
 ```
 
-Beyond the neighborhoods, another thing that we can think of representing as a collection are the coordinates of a city, latitude and longitude.  The first attribute is latitude and the second is longitude.
+Beyond the neighborhoods, another thing that we can think of representing as a collection are the coordinates of a city, latitude and longitude.  Below, our `coordinates` list contains the coordinates for Buenos Aires.  The first element is latitude and the second is longitude.
 
 
 ```python
 coordinates = [-34.6037, -58.3816]
 ```
 
-Set the latitude of Buenos Aires equal to `ba_latitude` and set the longitude to be Buenos Aires to be `ba_longitude`.
+Set `ba_latitude` to equal the latitude of Buenos Aires and set `ba_longitude` to the longitude of Buenos Aires.
 
 
 ```python
@@ -64,7 +63,7 @@ Press shift + enter on the above code, and our `folium` library is available to 
 
 ```python
 import folium
-buenos_map = folium.Map([-34.6037, -58.3816])
+buenos_map = folium.Map([ba_latitude, ba_longitude])
 buenos_map
 ```
 
@@ -72,30 +71,23 @@ All of that from a couple of lines of code.  Let's understand it:
 
 ```python
 import folium
-buenos_map = folium.Map([-34.6037, -58.3816])
+buenos_map = folium.Map([ba_latitude, ba_longitude])
 buenos_map
 ```
 
-> [Folium](https://github.com/python-visualization/folium) is a mapping library built on Python.  We created a representation of a map, by referencing the `folium.Map` function and passing through a list.  That list represents the latitude and longitude, just like we saw previously.  The map object is stored as the variable `buenos`.  Since `buenos` is the last line of a cell, the map is displayed.
+> [Folium](https://github.com/python-visualization/folium) is a mapping library built on Python.  We created a representation of a map, by referencing the `folium.Map` function and passing through a list.  That list represents the latitude and longitude, just like we saw previously.  The map object is stored as the variable `buenos`.  Since `buenos_map` is the last line of a cell, the map is displayed.
 
-Now we can also add a marker to this map.
+Now we can also add a marker to this map.  For now, let's start by adding a marker for our Buenos Aires coordinates.
 
 
 ```python
-buenos_marker = folium.Marker([-34.6037, -58.3816])
+buenos_marker = folium.Marker([ba_latitude, ba_longitude])
 buenos_marker.add_to(buenos_map)
 ```
 
-
-
-
-    <folium.map.Marker at 0x109767208>
-
-
-
 So we used the `folium` library to create a marker.  We specified the coordinates of the marker as a list. Finally, we added the marker to our map with the `add_to` function.
 
-Let's see our updated map!  We see our map simply by referencing our `buenos_map` variable.
+Let's see our updated map!  We see our map by referencing our `buenos_map` variable.
 
 
 ```python
@@ -108,13 +100,6 @@ Great! Note that both the map object and the map marker are just stored as varia
 ```python
 buenos_marker
 ```
-
-
-
-
-    <folium.map.Marker at 0x109767208>
-
-
 
 And just like any other piece of
 data in Python, we can place this marker in a list, and then retrieve it from the list.
@@ -129,18 +114,11 @@ buenos_markers = [buenos_marker]
 buenos_markers[0]
 ```
 
-
-
-
-    <folium.map.Marker at 0x109767208>
-
-
-
-Here are some other markers to add to our map:
+Recall our `neighborhoods` list from above.  The coordinates in the markers below match the neighborhoods in our `neighborhoods` list, respectively.
 
 
 ```python
-neighborhood_markers = ['Palermo', 'Ricoleta', 'Santelmo', 'Puerto Madero', 'Belgrano', 'La Boca']
+neighborhoods = ['Palermo', 'Ricoleta', 'Santelmo', 'Puerto Madero', 'Belgrano', 'La Boca']
 marker_one = folium.Marker([-34.5711, -58.4233])
 marker_two = folium.Marker([-34.5895, -58.3974])
 marker_three = folium.Marker([-34.6212, -58.3731])
@@ -150,22 +128,24 @@ marker_six = folium.Marker([-34.6345, -58.3631])
 neighborhood_markers = [marker_one, marker_two, marker_three, marker_four, marker_five, marker_six]
 ```
 
-Select the last marker and assign it equal to `la_boca_marker`.
+Assign `la_boca_marker` equal to the last marker.
 
 
 ```python
 la_boca_marker = None
 ```
 
+Below, we will rewrite `buenos_map` variable to create a new map of Buenos Aires, but this time we will add `la_boca_marker` to the map and zoom in a bit using the `zoom_start` attribute.
+
 
 ```python
 import folium
-buenos_map = folium.Map([-34.6037, -58.3816], zoom_start = 12)
+buenos_map = folium.Map([ba_latitude, ba_longitude], zoom_start = 12)
 la_boca_marker.add_to(buenos_map)
 buenos_map
 ```
 
-Now that we plotted `la_boca` we don't need the marker anymore.  So remove this last element from our `neighborhood_markers` list.
+Now that we plotted `la_boca_marker` we don't need the marker anymore.  So, let's remove this last element from our `neighborhood_markers` list.
 
 
 ```python
@@ -173,28 +153,20 @@ neighborhood_markers.pop()
 ```
 
 
-
-
-    <folium.map.Marker at 0x109865e80>
-
-
-
-
 ```python
-print(len(neighborhood_markers)) # 6
+print(len(neighborhood_markers)) # 5
 print(neighborhood_markers[-1] == marker_five) # True
 ```
 
-Now select the second marker in the list and set that equal to `recoleta`.
+Now assign `recoleta_marker` to the second marker in the `neighborhood_markers` list.  This time, we won't reassign our `buenos_map` so we should expect both `la_boca_marker` and `recoleta_marker` to appear!
 
 
 ```python
-recoleta = None
+recoleta_marker = None
 ```
 
 
 ```python
-buenos_map = folium.Map([-34.6037, -58.3816], zoom_start = 12)
 recoleta.add_to(buenos_map)
 buenos_map
 ```
