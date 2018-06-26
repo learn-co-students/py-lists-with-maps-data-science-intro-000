@@ -167,7 +167,7 @@ recoleta_marker = None
 
 
 ```python
-recoleta.add_to(buenos_map)
+recoleta_marker.add_to(buenos_map)
 buenos_map
 ```
 
