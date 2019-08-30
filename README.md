@@ -82,7 +82,7 @@ buenos_map = folium.Map([ba_latitude, ba_longitude])
 buenos_map
 ```
 
-> [Folium](https://github.com/python-visualization/folium) is a mapping library built on Python.  We created a representation of a map, by referencing the `folium.Map` function and passing through a list.  That list represents the latitude and longitude, just like we saw previously.  The map object is stored as the variable `buenos`.  Since `buenos_map` is the last line of a cell, the map is displayed.
+> [Folium](https://github.com/python-visualization/folium) is a mapping library built on Python.  We created a representation of a map, by referencing the `folium.Map` function and passing through a list.  That list represents the latitude and longitude, just like we saw previously.  The map object is stored as the variable `buenos_map`.  Since `buenos_map` is the last line of a cell, the map is displayed.
 
 Now we can also add a marker to this map.  For now, let's start by adding a marker for our Buenos Aires coordinates.
 
