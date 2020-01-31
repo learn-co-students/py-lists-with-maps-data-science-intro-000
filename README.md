@@ -3,7 +3,7 @@
 
 ### Introduction
 
-Ok, so now that we have a sense of how to read from and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps. 
+Ok, so now that we have a sense of how to read from and alter a list in Python, let's see how our knowledge of lists can help us in creating data visualizations by plotting maps.
 
 ### Working with lists and maps
 
@@ -21,6 +21,7 @@ Assign the variable `palermo` to the first element of the `neighborhoods` list.
 
 ```python
 palermo = None
+palermo = neighborhoods[0]
 ```
 
 Now assign the variable `la_boca` to the last element of our list.
@@ -28,6 +29,7 @@ Now assign the variable `la_boca` to the last element of our list.
 
 ```python
 la_boca = None
+la_boca = neighborhoods[-1]
 ```
 
 Beyond the neighborhoods, another thing that we can think of representing as a collection are the coordinates of a city, latitude and longitude.  Below, our `coordinates` list contains the coordinates for Buenos Aires.  The first element is latitude and the second is longitude.
@@ -42,11 +44,13 @@ Set `ba_latitude` to equal the latitude of Buenos Aires and set `ba_longitude` t
 
 ```python
 ba_latitude = None
+ba_latitude = -34.6037
 ```
 
 
 ```python
 ba_longitude = None
+ba_longitude = -58.3816
 ```
 
 Now let's see if we can display this as a map.
@@ -133,6 +137,7 @@ Assign `la_boca_marker` equal to the last marker.
 
 ```python
 la_boca_marker = None
+la_boca_marker = neighborhood_markers[-1]
 ```
 
 Below, we will rewrite `buenos_map` variable to create a new map of Buenos Aires, but this time we will add `la_boca_marker` to the map and zoom in a bit using the `zoom_start` attribute.
@@ -163,6 +168,7 @@ Now assign `recoleta_marker` to the second marker in the `neighborhood_markers` 
 
 ```python
 recoleta_marker = None
+recoleta_marker = neighborhood_markers[1]
 ```
 
 
